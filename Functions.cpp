@@ -1,4 +1,3 @@
-
 //Functions.cpp File for Methods of Fraction Class
 #include "Fraction.h"
 #include <cmath>
@@ -140,6 +139,15 @@ Fraction Fraction::operator/(const Fraction& f) const {
 	int den1 = this->denominator;
 	int num2 = f.numerator;
 	int den2 = f.denominator;
+
+	if ((num1 < 0) && (num2 < 0)) {
+		num1 = num1 * (-1);
+		num2 = num2 * (-1);
+	}
+	if ((den1 < 0) && (den2 < 0)) {
+		den1 = den1 * (-1);
+		den2 = den2 * (-1);
+	}
 
 	//Divide Variable Equations
 	int divideNumerator = (num1 * den2);
@@ -343,4 +351,5 @@ Fraction::~Fraction(void) {
 	cout << "Deleting Object" << endl;
 	cout << numerator << "/" << denominator << endl;
 }
+
 
